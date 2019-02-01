@@ -43,16 +43,21 @@ $(document).ready(function(){
       myShip= new Starship(shipName,4000,400,200);
     }
     console.log(myShip);
+    // if statement testing if they entered a ship name add is-invalid class if not
     $("#shipForm").hide();
     $("#crewForm").show();
   })
 
   $('#crewForm').submit(function(event){
     event.preventDefault();
+    // if statement testing if they entered at least one player name, and adds is-invalid class;
+    // must have a captain, and only one
     var playerName=$("#nameInput").val();
     var role=$('#roleInput').val();
     myShip.crew.push(new CrewMember(playerName,role));
     console.log(myShip);
   });
-
+  // Start Game button, hides form and opens first scence
+  // Alternates between players, where they make choices based on their Role (scientist might choose to research aliens, for example);
+  // Events Pop up based on their descisions (i.e. You didn't research an alien that entered your ship, it kills 100 colonists before you are able to take it out.)
 })

@@ -12,14 +12,20 @@ function CrewMember(name,role){
   this.experience=0;
 }
 
-Starship.pototype.addCrewMember=function(){
-  this.crew.push(new CrewMember())
-}
-
 
 Starship.prototype.buySupplies=function(money){
   this.funds-=money;
   this.supplies+=money*2;
+}
+
+Starship.prototype.feedColonists=function(colonists){
+  if(this.supplies<this.colonists){
+    this.colonists-=(this.colonists-this.supplies)/2;
+    this.supplies=0;
+  }
+  else{
+      this.supplies-=colonists;
+  }
 }
 
 $(document).ready(function(){

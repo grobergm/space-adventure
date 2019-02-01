@@ -3,8 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title>Space Adventure</title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    
+    <form id="shipForm">
+      <div class="form-group">
+        <label for="shipNameInput">Ship Name:</label>
+        <input class="form-control" id="shipNameInput" type="text" placeholder="Choose a name for your Starship">
+        <label for="difficulty">Select difficulty:</label>
+        <select class="form-control" id="difficulty" name="gameDifficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button class="btn btn-block btn-primary" type="submit">Select Crew</button>
+      </div>
+    </form>
+    <form id="crewForm">
+      <div class="form-group">
+        <label for="nameInput">Player Name:</label>
+        <input class="form-control" id="nameInput" type="text" placeholder="What is your name?">
+        <label for="roleInput">Select difficulty:</label>
+        <select class="form-control" id="roleInput" name="role">
+          <option value="captain">Captain</option>
+          <option value="scientist">Scientist</option>
+          <option value="engineer">Engineer</option>
+          <option value="medic">Medic</option>
+        </select>
+        <button class="btn btn-block btn-primary" type="submit">Select Crew</button>
+      </div>
+    </form>
   </body>
 </html>

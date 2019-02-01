@@ -18,15 +18,16 @@ Starship.prototype.buySupplies=function(money){
   this.supplies+=money*2;
 }
 
-Starship.prototype.feedColonists=function(colonists){
+Starship.prototype.feedColonists=function(){
   if(this.supplies<this.colonists){
     this.colonists-=(this.colonists-this.supplies)/2;
     this.supplies=0;
   }
   else{
-      this.supplies-=colonists;
+      this.supplies-=this.colonists;
   }
 }
+
 
 $(document).ready(function(){
   var myShip=[];
@@ -41,13 +42,17 @@ $(document).ready(function(){
     } else if (difficulty==="hard"){
       myShip= new Starship(shipName,4000,400,200);
     }
+    console.log(myShip);
+    $("#shipForm").hide();
+    $("#crewForm").show();
   })
 
   $('#crewForm').submit(function(event){
     event.preventDefault();
     var playerName=$("#nameInput").val();
     var role=$('#roleInput').val();
-    myShip.crew.push(new CrewMember(playername,role));
+    myShip.crew.push(new CrewMember(playerName,role));
+    console.log(myShip);
   });
 
 })

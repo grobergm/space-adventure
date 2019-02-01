@@ -36,12 +36,12 @@ $(document).ready(function(){
       myShip= new Starship(shipName,4000,400,200);
     }
   })
-  var starShip= new Starship();
+
   $('#crewForm').submit(function(event){
     event.preventDefault();
     var playerName=$("#nameInput").val();
     var role=$('#roleInput').val();
-    starShip.crew.push(new CrewMember(playername,role))
+    myShip.crew.push(new CrewMember(playername,role));
   });
 
 })
